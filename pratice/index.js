@@ -1,16 +1,33 @@
-function handleResize(evnet){
-    console.log(event)
-    console.log("I have been resized")
+const title = document.querySelector("#title");
+
+const BASE_COLOR = "rgb(52, 73, 94)";
+const OTHER_COLOR = "#7f8c8d";
+
+function handleClick() {
+    const currentColor = title.style.color;
+    console.log(currentColor)
+    if (currentColor === BASE_COLOR) {
+        title.style.color = OTHER_COLOR;
+    } else {
+        title.style.color = BASE_COLOR;
+    }
 }
 
-// handleResize() 라고 적을경우 함수를 바로 호출하는 것.
-// handleResize 라고했을 경우 resize 될 때마다 호출이 됨
-window.addEventListener("resize", handleResize);
-
-const title  = document.querySelector("#title");
-
-function handleClick(){
-    title.style.color = "blue";
+function init() {
+    title.style.color = BASE_COLOR;
+    title.addEventListener("click", handleClick);
 }
 
-title.addEventListener("click", handleClick);
+init();
+
+function handleOffline(){
+    console.log("Bye bye")
+}
+
+function handleOnline(){
+    console.log("Welcome back");
+}
+
+
+window.addEventListener("offline", handleOffline);
+window.addEventListener("online", handleOnline);
