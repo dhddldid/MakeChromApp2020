@@ -1,8 +1,16 @@
-const title = document.getElementById("title");
-// id가 title인 첫번째 자식을 데려옴
-const title2 = document.querySelector("#title");
-title.innerHTML = "Hi! From JS";
-//console.log(title)
-title.style.color = "red";
-document.title = "I own you now";
-console.dir(title)
+function handleResize(evnet){
+    console.log(event)
+    console.log("I have been resized")
+}
+
+// handleResize() 라고 적을경우 함수를 바로 호출하는 것.
+// handleResize 라고했을 경우 resize 될 때마다 호출이 됨
+window.addEventListener("resize", handleResize);
+
+const title  = document.querySelector("#title");
+
+function handleClick(){
+    title.style.color = "blue";
+}
+
+title.addEventListener("click", handleClick);
