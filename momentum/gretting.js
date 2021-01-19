@@ -18,7 +18,7 @@ function handleSubmit(event){
 
 function askForName(){
     form.classList.add(SHOWING_ClassName);
-    form.addEventListener("submit", handleSubmit) 
+    form.addEventListener("submit", handleSubmit) ;
 }
 
 function paintGreeting(text){
